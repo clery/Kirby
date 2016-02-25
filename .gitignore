@@ -20,6 +20,9 @@
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
+# Unity3D personnal settings files
+ProjectSettings/ProjectSettings.asset
+
 # =========================
 # Operating System Files
 # =========================
