@@ -30,6 +30,23 @@ public class PlatformCrush : MonoBehaviour {
         _depopTimer = Random.Range(_isVisible ? _depopFrequencyStart.x : _depopLengthStart.x, _isVisible ? _depopFrequencyStart.y : _depopLengthStart.y);
     }
 
+    void OnEnable()
+    {
+        Controller.OnDeath += Handle_OnDeath;
+    }
+
+    void OnDisable()
+    {
+        Controller.OnDeath -= Handle_OnDeath;
+    }
+
+    private void Handle_OnDeath(Controller character)
+    {
+        StopCoroutine("FadeIn");
+        StopCoroutine("FadeOut");
+        this.enabled = false;
+    }
+
     // Update is called once per frame
     void Update () {
         _depopTimer -= Time.deltaTime;
