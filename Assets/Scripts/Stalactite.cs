@@ -8,6 +8,7 @@ public class Stalactite : MonoBehaviour {
     [SerializeField]
     private Vector2 _fallingSpeedRange;
     private float _speed = 5f;
+    private Rigidbody2D _rigidbody;
 
     void OnEnable()
     {
@@ -21,23 +22,27 @@ public class Stalactite : MonoBehaviour {
 
     private void Handle_OnDeath(Controller character)
     {
+        StopAllCoroutines();
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         this.enabled = false;
     }
 
     // Use this for initialization
     void Start () {
+        _rigidbody = GetComponent<Rigidbody2D>();
         _speed = Random.Range(_fallingSpeedRange.x, _fallingSpeedRange.y);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        _timeBeforeFall -= Time.deltaTime;
-        if (_timeBeforeFall <= 0f)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, _speed);
-        if (transform.position.y <= -2)
-            Destroy(gameObject);
+        Invoke("DestroySelf", 20);
+        StartCoroutine("Fall");
     }
 
+    void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
 
+    IEnumerator Fall()
+    {
+        yield return new WaitForSeconds(_timeBeforeFall);
+        _rigidbody.velocity = new Vector2(0, _speed);
+    }
 }

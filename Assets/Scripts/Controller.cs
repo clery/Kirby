@@ -18,7 +18,6 @@ public class Controller : MonoBehaviour {
     [SerializeField]
     private float _defaultSpeedTimer = 1f;
     private float _speedTimer = -1f;
-    private float _direction = 0f;
     public bool Running { get; private set; }
     public bool Left { get; set; }
     public bool Right { get; set; }
@@ -31,6 +30,10 @@ public class Controller : MonoBehaviour {
     }
     private bool _isDead = false;
     public bool IsDead { get { return (_isDead); } private set { _isDead = value; } }
+
+    private bool _infiniteJumps = false;
+    [SerializeField]
+    private float _infiniteJumpsTime = 10f;
 
     public delegate void DeathAction(Controller character);
     public static event DeathAction OnDeath;
@@ -66,22 +69,29 @@ public class Controller : MonoBehaviour {
 
     void Update()
     {
-        _speedTimer -= Time.deltaTime;
-        _animator.SetBool("Grounded", IsGrounded());
+        if (!IsDead)
+        {
+            if (Input.GetButtonDown("Jump"))
+                Jump();
+            _speedTimer -= Time.deltaTime;
+            Score.Instance.Update();
+            _animator.SetBool("Grounded", IsGrounded());
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate () {
         Move();
-        if (IsGrounded())
-            _availableJumps = _defaultAvailableJumps;
+        if (!IsDead)
+        {
+            if (IsGrounded())
+                _availableJumps = _defaultAvailableJumps;
 #if UNITY_EDITOR
-        if (Input.GetButtonDown("Jump"))
-            Jump();
-        if (Input.GetAxisRaw("Horizontal") == 0 && lastHAxis != 0)
-            OnButtonReleased();
-        lastHAxis = Input.GetAxisRaw("Horizontal");
+            if (Input.GetAxisRaw("Horizontal") == 0 && lastHAxis != 0)
+                OnButtonReleased();
+            lastHAxis = Input.GetAxisRaw("Horizontal");
 #endif
+        }
     }
 
     void Move()
@@ -101,7 +111,7 @@ public class Controller : MonoBehaviour {
 
     public void Jump()
     {
-        if (!IsDead && (IsGrounded() || _availableJumps > 0))
+        if (!IsDead && (IsGrounded() || _availableJumps > 0 || _infiniteJumps))
         {
             if (!IsGrounded())
                 _availableJumps--;
@@ -125,9 +135,25 @@ public class Controller : MonoBehaviour {
         _animator.SetTrigger("Dead");
     }
 
+    IEnumerator InfiniteJumps()
+    {
+        Debug.Log("INFINITE JUMPS !");
+        Debug.Log("Ends in 10 seconds");
+        _infiniteJumps = true;
+        yield return new WaitForSeconds(_infiniteJumpsTime);
+        _infiniteJumps = false;
+        _availableJumps = _defaultAvailableJumps;
+        Debug.Log("Infinite jumps ended");
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Killer") && OnDeath != null)
             OnDeath(this);
+        else if (other.gameObject.layer == LayerMask.NameToLayer("InfiniteJumpBonus"))
+        {
+            StopCoroutine(InfiniteJumps());
+            StartCoroutine(InfiniteJumps());
+        }
     }
 }

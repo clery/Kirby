@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StalactiteSpawner : MonoBehaviour {
+public class ObjectSpawner : MonoBehaviour {
 
     [SerializeField]
     private Vector2 _timeBetweenSpawnsStart;
@@ -12,7 +12,7 @@ public class StalactiteSpawner : MonoBehaviour {
     private float _timeBeforeMaxDifficulty = 90f;
     private float _timer;
     [SerializeField]
-    private GameObject _stalactite;
+    private GameObject _object;
 
 	// Use this for initialization
 	void Start () {
@@ -39,16 +39,18 @@ public class StalactiteSpawner : MonoBehaviour {
         _timer -= Time.deltaTime;
         if (_timer < 0f)
         {
-            SpawnStalactite();
+            SpawnObject();
             var min = Mathf.Lerp(_timeBetweenSpawnsStart.x, _timeBetweenSpawnsEnd.x, _timer / _timeBeforeMaxDifficulty);
             var max = Mathf.Lerp(_timeBetweenSpawnsStart.y, _timeBetweenSpawnsEnd.y, _timer / _timeBeforeMaxDifficulty);
             _timer = Random.Range(min, max);
         }
     }
 
-    void SpawnStalactite()
+    void SpawnObject()
     {
-        GameObject obj = Instantiate<GameObject>(_stalactite);
-        obj.transform.SetParent(transform.GetChild(Random.Range(0, transform.childCount - 1)), false);
+        GameObject obj = Instantiate<GameObject>(_object);
+        obj.transform.SetParent(transform.GetChild(Random.Range(0, transform.childCount - 1)));
+        obj.transform.localPosition = Vector3.zero;
+        Debug.Log(obj.transform.localScale);
     }
 }
