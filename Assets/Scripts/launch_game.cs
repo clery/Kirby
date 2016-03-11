@@ -15,14 +15,14 @@ public class launch_game : MonoBehaviour {
         if (PlayerPrefs.HasKey("sound") && PlayerPrefs.HasKey("music"))
         {
             slidermusic.value = PlayerPrefs.GetFloat("music");
-            slidermusic.value = PlayerPrefs.GetFloat("sound");
+            slidersound.value = PlayerPrefs.GetFloat("sound");
         }
         else
         {
-         PlayerPrefs.SetFloat("sound", 1);
-         PlayerPrefs.SetFloat("music", 1);
+            PlayerPrefs.SetFloat("sound", 1);
+            PlayerPrefs.SetFloat("music", 1);
             slidermusic.value = PlayerPrefs.GetFloat("music");
-            slidermusic.value = PlayerPrefs.GetFloat("sound");
+            slidersound.value = PlayerPrefs.GetFloat("sound");
         }
     }
 	
