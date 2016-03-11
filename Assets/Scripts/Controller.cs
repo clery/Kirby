@@ -102,7 +102,7 @@ public class Controller : MonoBehaviour {
             {
                 if (_speedTimer >= 0f)
                     Running = true;
-                _rigidbody.velocity = new Vector2(AxisH * _speed * (Running ? 2 : 1), _rigidbody.velocity.y);
+                _rigidbody.velocity = new Vector2(AxisH * _speed, _rigidbody.velocity.y);
                 transform.localScale = new Vector3(AxisH, transform.localScale.y, transform.localScale.z);
             }
             _animator.SetFloat("HSpeed", Mathf.Abs(_rigidbody.velocity.x));
@@ -133,17 +133,17 @@ public class Controller : MonoBehaviour {
         _rigidbody.gravityScale = 0;
         _rigidbody.velocity = Vector2.zero;
         _animator.SetTrigger("Dead");
+        _animator.SetLayerWeight(_animator.GetLayerIndex("Color Layer"), 0f);
     }
 
     IEnumerator InfiniteJumps()
     {
-        Debug.Log("INFINITE JUMPS !");
-        Debug.Log("Ends in 10 seconds");
         _infiniteJumps = true;
+        _animator.SetBool("InfiniteJumps", true);
         yield return new WaitForSeconds(_infiniteJumpsTime);
         _infiniteJumps = false;
+        _animator.SetBool("InfiniteJumps", false);
         _availableJumps = _defaultAvailableJumps;
-        Debug.Log("Infinite jumps ended");
     }
 
     void OnTriggerEnter2D(Collider2D other)
