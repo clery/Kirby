@@ -35,6 +35,11 @@ public class launch_game : MonoBehaviour {
     {
         SceneManager.LoadScene("level1");
     }
+
+    public void quitgame()
+    {
+        Application.Quit();
+    }
     public void launchsettings(GameObject settings)
     {
         settings.SetActive(true);
