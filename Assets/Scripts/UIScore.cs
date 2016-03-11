@@ -22,6 +22,11 @@ public class UIScore : MonoBehaviour {
         Score.OnAddScore += Handle_OnAddScore;
     }
 
+    void OnDisable()
+    {
+        Score.OnAddScore -= Handle_OnAddScore;
+    }
+
     private void Handle_OnAddScore()
     {
         _animator.SetTrigger("AddScore");

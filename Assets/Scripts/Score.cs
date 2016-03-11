@@ -29,4 +29,9 @@ public class Score : Singleton<Score> {
         if (OnAddScore != null)
             OnAddScore();
     }
+
+    public void Reset()
+    {
+        _score = 0;
+    }
 }

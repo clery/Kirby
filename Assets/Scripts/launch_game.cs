@@ -10,9 +10,10 @@ public class launch_game : MonoBehaviour {
     public Slider slidermusic;
     public Slider slidersound;
     public GameObject settingsMenu;
+    public GameObject replayMenu;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         if (PlayerPrefs.HasKey("sound") && PlayerPrefs.HasKey("music"))
         {
             slidermusic.value = PlayerPrefs.GetFloat("music");
@@ -29,14 +30,31 @@ public class launch_game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (settingsMenu != null && Input.GetKeyDown(KeyCode.Escape))
+        if (settingsMenu != null && Input.GetKeyDown(KeyCode.Escape) && replayMenu.gameObject.activeSelf == false)
         {
-            launchsettings(settingsMenu);
+            launchMenu(settingsMenu);
         }
 	}
 
+    void OnEnable()
+    {
+        Controller.OnDeath += Handle_OnDeath;
+    }
+
+    void OnDisable()
+    {
+        Controller.OnDeath -= Handle_OnDeath;
+    }
+
+    private void Handle_OnDeath(Controller character)
+    {
+        Invoke("launchReplay", 3f);
+    }
+
     public void launchgame()
     {
+        Time.timeScale = 1f;
+        Score.Instance.Reset();
         SceneManager.LoadScene("level1");
     }
 
@@ -44,10 +62,14 @@ public class launch_game : MonoBehaviour {
     {
         Application.Quit();
     }
-    public void launchsettings(GameObject settings)
+    void launchReplay()
+    {
+        launchMenu(replayMenu);
+    }
+    public void launchMenu(GameObject menu)
     {
         Time.timeScale = 0f;
-        settings.SetActive(true);
+        menu.SetActive(true);
     }
     public void savesettings(GameObject settings)
     {
