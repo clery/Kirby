@@ -9,6 +9,7 @@ public class launch_game : MonoBehaviour {
     public AudioMixer mix;
     public Slider slidermusic;
     public Slider slidersound;
+    public GameObject settingsMenu;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,10 @@ public class launch_game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (settingsMenu != null && Input.GetKeyDown(KeyCode.Escape))
+        {
+            launchsettings(settingsMenu);
+        }
 	}
 
     public void launchgame()
@@ -42,10 +46,12 @@ public class launch_game : MonoBehaviour {
     }
     public void launchsettings(GameObject settings)
     {
+        Time.timeScale = 0f;
         settings.SetActive(true);
     }
     public void savesettings(GameObject settings)
     {
+        Time.timeScale = 1f;
         settings.SetActive(false);
     }
     public void ChangeSounds(Slider slider)
