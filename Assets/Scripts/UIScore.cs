@@ -29,7 +29,8 @@ public class UIScore : MonoBehaviour {
 
     private void Handle_OnAddScore()
     {
-        _animator.SetTrigger("AddScore");
+        if (_animator)
+            _animator.SetTrigger("AddScore");
     }
 
     // Update is called once per frame

@@ -12,11 +12,15 @@ public class CameraFollower : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        _maxPosition.x *= Camera.main.pixelWidth / 100;
+        _maxPosition.y *= Camera.main.pixelWidth / 100;
+        _minPosition.x *= Camera.main.pixelWidth / 100;
+        _minPosition.y *= Camera.main.pixelWidth / 100;
+    }
+
+    // Update is called once per frame
+    void Update () {
         transform.position = _target.position;
         if (transform.position.x < _minPosition.x)
             transform.position = new Vector2(_minPosition.x, transform.position.y);

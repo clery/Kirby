@@ -30,9 +30,14 @@ public class launch_game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (settingsMenu != null && Input.GetKeyDown(KeyCode.Escape) && replayMenu.gameObject.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            launchMenu(settingsMenu);
+            if (settingsMenu != null && settingsMenu.gameObject.activeSelf == true)
+                savesettings(settingsMenu);
+            else if (settingsMenu != null && replayMenu.gameObject.activeSelf == false)
+                launchMenu(settingsMenu);
+            else
+                Application.Quit();
         }
 	}
 
@@ -51,11 +56,11 @@ public class launch_game : MonoBehaviour {
         Invoke("launchReplay", 3f);
     }
 
-    public void launchgame()
+    public void launchscene(string scene)
     {
         Time.timeScale = 1f;
         Score.Instance.Reset();
-        SceneManager.LoadScene("level1");
+        SceneManager.LoadScene(scene);
     }
 
     public void quitgame()
@@ -64,6 +69,7 @@ public class launch_game : MonoBehaviour {
     }
     void launchReplay()
     {
+        Score.Instance.PublishScore();
         launchMenu(replayMenu);
     }
     public void launchMenu(GameObject menu)
@@ -79,12 +85,12 @@ public class launch_game : MonoBehaviour {
     public void ChangeSounds(Slider slider)
     {
         PlayerPrefs.SetFloat("sound", slider.value);
-        mix.SetFloat("sound", Mathf.Lerp(-80, 20, slider.value));
+        mix.SetFloat("sound", Mathf.Lerp(-80, 0, slider.value));
     }
 
     public void ChangeMusic(Slider slider)
     {
         PlayerPrefs.SetFloat("music", slider.value);
-        mix.SetFloat("music", Mathf.Lerp(-80, 20, slider.value));
+        mix.SetFloat("music", Mathf.Lerp(-80, 0, slider.value));
     }
 }

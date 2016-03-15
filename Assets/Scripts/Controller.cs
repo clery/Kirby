@@ -33,7 +33,11 @@ public class Controller : MonoBehaviour {
 
     private bool _infiniteJumps = false;
     [SerializeField]
-    private float _infiniteJumpsTime = 10f;
+    private float _infiniteJumpsTime = 5f;
+
+    private AudioSource _audioSource;
+
+    private int _infiniteJumpBonuses = 0;
 
     public delegate void DeathAction(Controller character);
     public static event DeathAction OnDeath;
@@ -55,6 +59,7 @@ public class Controller : MonoBehaviour {
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Use this for initialization
@@ -118,6 +123,7 @@ public class Controller : MonoBehaviour {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
             _rigidbody.AddForce(_jumpForce, ForceMode2D.Impulse);
             _animator.SetTrigger("Jump");
+            _audioSource.Play();
         }
     }
 
@@ -138,12 +144,17 @@ public class Controller : MonoBehaviour {
 
     IEnumerator InfiniteJumps()
     {
+        _infiniteJumpBonuses++;
         _infiniteJumps = true;
         _animator.SetBool("InfiniteJumps", true);
-        yield return new WaitForSeconds(_infiniteJumpsTime);
-        _infiniteJumps = false;
-        _animator.SetBool("InfiniteJumps", false);
-        _availableJumps = _defaultAvailableJumps;
+        yield return new WaitForSeconds(_infiniteJumpsTime / 1);
+        _infiniteJumpBonuses--;
+        if (_infiniteJumpBonuses == 0)
+        {
+            _infiniteJumps = false;
+            _animator.SetBool("InfiniteJumps", false);
+            _availableJumps = _defaultAvailableJumps;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -151,9 +162,6 @@ public class Controller : MonoBehaviour {
         if (other.gameObject.layer == LayerMask.NameToLayer("Killer") && OnDeath != null)
             OnDeath(this);
         else if (other.gameObject.layer == LayerMask.NameToLayer("InfiniteJumpBonus"))
-        {
-            StopCoroutine(InfiniteJumps());
             StartCoroutine(InfiniteJumps());
-        }
     }
 }

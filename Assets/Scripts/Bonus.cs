@@ -72,7 +72,11 @@ public class Bonus : MonoBehaviour {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Score.Instance.Add(_scoreValue);
-            Destroy(gameObject);
+            GetComponent<AudioSource>().Play();
+            Destroy(gameObject, 2f);
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            enabled = false;
         }
     }
 }
