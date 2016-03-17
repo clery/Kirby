@@ -13,9 +13,25 @@ public class Lava : MonoBehaviour {
         _rb = GetComponent<Rigidbody2D>();
         _rb.velocity = new Vector2(0, _speed);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void OnEnable()
+    {
+        Controller.OnDeath += Handle_OnDeath;
+    }
+
+    void OnDisable()
+    {
+        Controller.OnDeath -= Handle_OnDeath;
+    }
+
+    private void Handle_OnDeath(Controller character)
+    {
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        this.enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update () {
 	
 	}
 }
