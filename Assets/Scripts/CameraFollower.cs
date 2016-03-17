@@ -9,6 +9,10 @@ public class CameraFollower : MonoBehaviour {
     private Vector2 _minPosition;
     [SerializeField]
     private Vector2 _maxPosition;
+    [SerializeField]
+    private bool _x = true;
+    [SerializeField]
+    private bool _y = true;
 
     // Use this for initialization
     void Start () {
@@ -22,13 +26,13 @@ public class CameraFollower : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         transform.position = _target.position;
-        if (transform.position.x < _minPosition.x)
+        if (transform.position.x < _minPosition.x && _x)
             transform.position = new Vector2(_minPosition.x, transform.position.y);
-        if (transform.position.y < _minPosition.y)
+        if (transform.position.y < _minPosition.y && _y)
             transform.position = new Vector2(transform.position.x, _minPosition.y);
-        if (transform.position.x > _maxPosition.x)
+        if (transform.position.x > _maxPosition.x && _x)
             transform.position = new Vector2(_maxPosition.x, transform.position.y);
-        if (transform.position.y > _maxPosition.y)
+        if (transform.position.y > _maxPosition.y && _y)
             transform.position = new Vector2(transform.position.x, _maxPosition.y);
         transform.position -= new Vector3(0, 0, 10);
     }

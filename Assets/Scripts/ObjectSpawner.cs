@@ -49,8 +49,8 @@ public class ObjectSpawner : MonoBehaviour {
     void SpawnObject()
     {
         GameObject obj = Instantiate<GameObject>(_object);
-        obj.transform.SetParent(transform.GetChild(Random.Range(0, transform.childCount - 1)));
-        obj.transform.localPosition = Vector3.zero;
-        Debug.Log(obj.transform.localScale);
+        obj.transform.position = transform.GetChild(Random.Range(0, transform.childCount - 1)).position;
+//        obj.transform.SetParent(transform.GetChild(Random.Range(0, transform.childCount - 1)));
+//        obj.transform.localPosition = Vector3.zero;
     }
 }

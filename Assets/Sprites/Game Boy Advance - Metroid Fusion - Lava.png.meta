@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: a06462f40119ff348afb04ff51afefc5
+timeCreated: 1458216936
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Game Boy Advance - Metroid Fusion - Lava_0
+    21300002: Game Boy Advance - Metroid Fusion - Lava_1
+    21300004: Game Boy Advance - Metroid Fusion - Lava_2
+    21300006: Game Boy Advance - Metroid Fusion - Lava_3
+    21300008: Game Boy Advance - Metroid Fusion - Lava_4
+    21300010: Game Boy Advance - Metroid Fusion - Lava_5
+    21300012: Game Boy Advance - Metroid Fusion - Lava_6
+    21300014: Game Boy Advance - Metroid Fusion - Lava_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Game Boy Advance - Metroid Fusion - Lava_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 414
+        width: 320
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -157, y: 50}
+        - {x: -160, y: 48}
+        - {x: -160, y: -50}
+        - {x: 160, y: -50}
+        - {x: 160, y: 50}
+    - name: Game Boy Advance - Metroid Fusion - Lava_1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 305
+        width: 320
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 51}
+        - {x: -160, y: -52}
+        - {x: 160, y: -52}
+        - {x: 160, y: 48}
+        - {x: 152, y: 51}
+      - - {x: -149, y: 47}
+        - {x: -146, y: 48}
+        - {x: -146, y: 52}
+        - {x: -152, y: 52}
+        - {x: -152, y: 50}
+      - - {x: -133, y: 47}
+        - {x: -130, y: 48}
+        - {x: -130, y: 52}
+        - {x: -136, y: 52}
+        - {x: -136, y: 50}
+      - - {x: -117, y: 47}
+        - {x: -114, y: 48}
+        - {x: -114, y: 52}
+        - {x: -120, y: 52}
+        - {x: -120, y: 50}
+      - - {x: -101, y: 47}
+        - {x: -98, y: 48}
+        - {x: -98, y: 52}
+        - {x: -104, y: 52}
+        - {x: -104, y: 50}
+      - - {x: -85, y: 47}
+        - {x: -82, y: 48}
+        - {x: -82, y: 52}
+        - {x: -88, y: 52}
+        - {x: -88, y: 50}
+      - - {x: -69, y: 47}
+        - {x: -66, y: 48}
+        - {x: -66, y: 52}
+        - {x: -72, y: 52}
+        - {x: -72, y: 50}
+      - - {x: -53, y: 47}
+        - {x: -50, y: 48}
+        - {x: -50, y: 52}
+        - {x: -56, y: 52}
+        - {x: -56, y: 50}
+      - - {x: -37, y: 47}
+        - {x: -34, y: 48}
+        - {x: -34, y: 52}
+        - {x: -40, y: 52}
+        - {x: -40, y: 50}
+      - - {x: -21, y: 47}
+        - {x: -18, y: 48}
+        - {x: -18, y: 52}
+        - {x: -24, y: 52}
+        - {x: -24, y: 50}
+      - - {x: -5, y: 47}
+        - {x: -2, y: 48}
+        - {x: -2, y: 52}
+        - {x: -8, y: 52}
+        - {x: -8, y: 50}
+      - - {x: 11, y: 47}
+        - {x: 14, y: 48}
+        - {x: 14, y: 52}
+        - {x: 8, y: 52}
+        - {x: 8, y: 50}
+      - - {x: 27, y: 47}
+        - {x: 30, y: 48}
+        - {x: 30, y: 52}
+        - {x: 24, y: 52}
+        - {x: 24, y: 50}
+      - - {x: 43, y: 47}
+        - {x: 46, y: 48}
+        - {x: 46, y: 52}
+        - {x: 40, y: 52}
+        - {x: 40, y: 50}
+      - - {x: 59, y: 47}
+        - {x: 62, y: 48}
+        - {x: 62, y: 52}
+        - {x: 56, y: 52}
+        - {x: 56, y: 50}
+      - - {x: 75, y: 47}
+        - {x: 78, y: 48}
+        - {x: 78, y: 52}
+        - {x: 72, y: 52}
+        - {x: 72, y: 50}
+      - - {x: 91, y: 47}
+        - {x: 94, y: 48}
+        - {x: 94, y: 52}
+        - {x: 88, y: 52}
+        - {x: 88, y: 50}
+      - - {x: 107, y: 47}
+        - {x: 110, y: 48}
+        - {x: 110, y: 52}
+        - {x: 104, y: 52}
+        - {x: 104, y: 50}
+      - - {x: 123, y: 47}
+        - {x: 126, y: 48}
+        - {x: 126, y: 52}
+        - {x: 120, y: 52}
+        - {x: 120, y: 50}
+      - - {x: 139, y: 47}
+        - {x: 142, y: 48}
+        - {x: 142, y: 52}
+        - {x: 136, y: 52}
+        - {x: 136, y: 50}
+      - - {x: 155, y: 47}
+        - {x: 158, y: 48}
+        - {x: 158, y: 52}
+        - {x: 152, y: 52}
+        - {x: 152, y: 50}
+    - name: Game Boy Advance - Metroid Fusion - Lava_2
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 413
+        width: 320
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -159, y: 51}
+        - {x: -160, y: 50}
+        - {x: -160, y: -51}
+        - {x: 160, y: -51}
+        - {x: 160, y: 50}
+        - {x: 159, y: 51}
+    - name: Game Boy Advance - Metroid Fusion - Lava_3
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 305
+        width: 320
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 47}
+        - {x: -160, y: -52}
+        - {x: 160, y: -52}
+        - {x: 160, y: 47}
+      - - {x: -157, y: 47}
+        - {x: -154, y: 48}
+        - {x: -154, y: 51}
+        - {x: -157, y: 52}
+        - {x: -159, y: 50}
+      - - {x: -141, y: 47}
+        - {x: -138, y: 48}
+        - {x: -138, y: 51}
+        - {x: -141, y: 52}
+        - {x: -143, y: 50}
+      - - {x: -125, y: 47}
+        - {x: -122, y: 48}
+        - {x: -122, y: 51}
+        - {x: -125, y: 52}
+        - {x: -127, y: 50}
+      - - {x: -109, y: 47}
+        - {x: -106, y: 48}
+        - {x: -106, y: 51}
+        - {x: -109, y: 52}
+        - {x: -111, y: 50}
+      - - {x: -93, y: 47}
+        - {x: -90, y: 48}
+        - {x: -90, y: 51}
+        - {x: -93, y: 52}
+        - {x: -95, y: 50}
+      - - {x: -77, y: 47}
+        - {x: -74, y: 48}
+        - {x: -74, y: 51}
+        - {x: -77, y: 52}
+        - {x: -79, y: 50}
+      - - {x: -61, y: 47}
+        - {x: -58, y: 48}
+        - {x: -58, y: 51}
+        - {x: -61, y: 52}
+        - {x: -63, y: 50}
+      - - {x: -45, y: 47}
+        - {x: -42, y: 48}
+        - {x: -42, y: 51}
+        - {x: -45, y: 52}
+        - {x: -47, y: 50}
+      - - {x: -29, y: 47}
+        - {x: -26, y: 48}
+        - {x: -26, y: 51}
+        - {x: -29, y: 52}
+        - {x: -31, y: 50}
+      - - {x: -13, y: 47}
+        - {x: -10, y: 48}
+        - {x: -10, y: 51}
+        - {x: -13, y: 52}
+        - {x: -15, y: 50}
+      - - {x: 3, y: 47}
+        - {x: 6, y: 48}
+        - {x: 6, y: 51}
+        - {x: 3, y: 52}
+        - {x: 1, y: 50}
+      - - {x: 19, y: 47}
+        - {x: 22, y: 48}
+        - {x: 22, y: 51}
+        - {x: 19, y: 52}
+        - {x: 17, y: 50}
+      - - {x: 35, y: 47}
+        - {x: 38, y: 48}
+        - {x: 38, y: 51}
+        - {x: 35, y: 52}
+        - {x: 33, y: 50}
+      - - {x: 51, y: 47}
+        - {x: 54, y: 48}
+        - {x: 54, y: 51}
+        - {x: 51, y: 52}
+        - {x: 49, y: 50}
+      - - {x: 67, y: 47}
+        - {x: 70, y: 48}
+        - {x: 70, y: 51}
+        - {x: 67, y: 52}
+        - {x: 65, y: 50}
+      - - {x: 83, y: 47}
+        - {x: 86, y: 48}
+        - {x: 86, y: 51}
+        - {x: 83, y: 52}
+        - {x: 81, y: 50}
+      - - {x: 99, y: 47}
+        - {x: 102, y: 48}
+        - {x: 102, y: 51}
+        - {x: 99, y: 52}
+        - {x: 97, y: 50}
+      - - {x: 115, y: 47}
+        - {x: 118, y: 48}
+        - {x: 118, y: 51}
+        - {x: 115, y: 52}
+        - {x: 113, y: 50}
+      - - {x: 131, y: 47}
+        - {x: 134, y: 48}
+        - {x: 134, y: 51}
+        - {x: 131, y: 52}
+        - {x: 129, y: 50}
+      - - {x: 147, y: 47}
+        - {x: 150, y: 48}
+        - {x: 150, y: 51}
+        - {x: 147, y: 52}
+        - {x: 145, y: 50}
+      - - {x: -151, y: 52}
+        - {x: -150, y: 49}
+        - {x: -147, y: 49}
+        - {x: -145, y: 51}
+        - {x: -145, y: 52}
+      - - {x: -135, y: 52}
+        - {x: -134, y: 49}
+        - {x: -131, y: 49}
+        - {x: -129, y: 51}
+        - {x: -129, y: 52}
+      - - {x: -119, y: 52}
+        - {x: -118, y: 49}
+        - {x: -115, y: 49}
+        - {x: -113, y: 51}
+        - {x: -113, y: 52}
+      - - {x: -103, y: 52}
+        - {x: -102, y: 49}
+        - {x: -99, y: 49}
+        - {x: -97, y: 51}
+        - {x: -97, y: 52}
+      - - {x: -87, y: 52}
+        - {x: -86, y: 49}
+        - {x: -83, y: 49}
+        - {x: -81, y: 51}
+        - {x: -81, y: 52}
+      - - {x: -71, y: 52}
+        - {x: -70, y: 49}
+        - {x: -67, y: 49}
+        - {x: -65, y: 51}
+        - {x: -65, y: 52}
+      - - {x: -55, y: 52}
+        - {x: -54, y: 49}
+        - {x: -51, y: 49}
+        - {x: -49, y: 51}
+        - {x: -49, y: 52}
+      - - {x: -39, y: 52}
+        - {x: -38, y: 49}
+        - {x: -35, y: 49}
+        - {x: -33, y: 51}
+        - {x: -33, y: 52}
+      - - {x: -23, y: 52}
+        - {x: -22, y: 49}
+        - {x: -19, y: 49}
+        - {x: -17, y: 51}
+        - {x: -17, y: 52}
+      - - {x: -7, y: 52}
+        - {x: -6, y: 49}
+        - {x: -3, y: 49}
+        - {x: -1, y: 51}
+        - {x: -1, y: 52}
+      - - {x: 9, y: 52}
+        - {x: 10, y: 49}
+        - {x: 13, y: 49}
+        - {x: 15, y: 51}
+        - {x: 15, y: 52}
+      - - {x: 25, y: 52}
+        - {x: 26, y: 49}
+        - {x: 29, y: 49}
+        - {x: 31, y: 51}
+        - {x: 31, y: 52}
+      - - {x: 41, y: 52}
+        - {x: 42, y: 49}
+        - {x: 45, y: 49}
+        - {x: 47, y: 51}
+        - {x: 47, y: 52}
+      - - {x: 57, y: 52}
+        - {x: 58, y: 49}
+        - {x: 61, y: 49}
+        - {x: 63, y: 51}
+        - {x: 63, y: 52}
+      - - {x: 73, y: 52}
+        - {x: 74, y: 49}
+        - {x: 77, y: 49}
+        - {x: 79, y: 51}
+        - {x: 79, y: 52}
+      - - {x: 89, y: 52}
+        - {x: 90, y: 49}
+        - {x: 93, y: 49}
+        - {x: 95, y: 51}
+        - {x: 95, y: 52}
+      - - {x: 105, y: 52}
+        - {x: 106, y: 49}
+        - {x: 109, y: 49}
+        - {x: 111, y: 51}
+        - {x: 111, y: 52}
+      - - {x: 121, y: 52}
+        - {x: 122, y: 49}
+        - {x: 125, y: 49}
+        - {x: 127, y: 51}
+        - {x: 127, y: 52}
+      - - {x: 137, y: 52}
+        - {x: 138, y: 49}
+        - {x: 141, y: 49}
+        - {x: 143, y: 51}
+        - {x: 143, y: 52}
+      - - {x: 153, y: 52}
+        - {x: 154, y: 49}
+        - {x: 157, y: 49}
+        - {x: 159, y: 51}
+        - {x: 159, y: 52}
+    - name: Game Boy Advance - Metroid Fusion - Lava_4
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 200
+        width: 320
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 49.5}
+        - {x: -160, y: -49.5}
+        - {x: 160, y: -49.5}
+        - {x: 160, y: 49.5}
+    - name: Game Boy Advance - Metroid Fusion - Lava_5
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 200
+        width: 320
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 50}
+        - {x: -160, y: -50}
+        - {x: 160, y: -50}
+        - {x: 160, y: 48}
+        - {x: 153, y: 50}
+    - name: Game Boy Advance - Metroid Fusion - Lava_6
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 91
+        width: 320
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 51.5}
+        - {x: -160, y: -51.5}
+        - {x: 160, y: -51.5}
+        - {x: 160, y: 50.5}
+        - {x: 154, y: 51.5}
+    - name: Game Boy Advance - Metroid Fusion - Lava_7
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 91
+        width: 320
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -160, y: 52}
+        - {x: -160, y: -52}
+        - {x: 160, y: -52}
+        - {x: 160, y: 52}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
